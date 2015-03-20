@@ -1,0 +1,8 @@
+linprog.dll
+_linprogGetMcrID		_linprogGetMcrID
+_linprogInitialize		_linprogInitialize
+_linprogInitializeWithHandlers		_linprogInitializeWithHandlers
+_linprogPrintStackTrace		_linprogPrintStackTrace
+_linprogTerminate		_linprogTerminate
+_mlfLp121		_mlfLp121
+_mlxLp121		_mlxLp121

@@ -1,0 +1,8 @@
+lp121.dll
+_lp121GetMcrID		_lp121GetMcrID
+_lp121Initialize		_lp121Initialize
+_lp121InitializeWithHandlers		_lp121InitializeWithHandlers
+_lp121PrintStackTrace		_lp121PrintStackTrace
+_lp121Terminate		_lp121Terminate
+_mlfLp121		_mlfLp121
+_mlxLp121		_mlxLp121

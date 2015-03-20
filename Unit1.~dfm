@@ -1,0 +1,268 @@
+object Form1: TForm1
+  Left = 192
+  Top = 122
+  Width = 870
+  Height = 500
+  Caption = 'Form1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 16
+    Width = 90
+    Height = 13
+    Caption = #1062#1077#1083#1077#1074#1072#1103' '#1092#1091#1085#1082#1094#1080#1103
+  end
+  object Label2: TLabel
+    Left = 32
+    Top = 152
+    Width = 73
+    Height = 13
+    Caption = #1052#1072#1090#1088#1080#1094#1072' '#1085#1086#1088#1084
+  end
+  object Label3: TLabel
+    Left = 32
+    Top = 296
+    Width = 133
+    Height = 13
+    Caption = #1054#1075#1088#1072#1085#1080#1095#1077#1085#1080#1103' '#1087#1086' '#1088#1077#1089#1091#1088#1089#1072#1084
+  end
+  object Label4: TLabel
+    Left = 376
+    Top = 16
+    Width = 113
+    Height = 13
+    Caption = #1054#1075#1088#1072#1085#1080#1095#1077#1085#1080#1103' '#1087#1086' '#1087#1083#1072#1085#1091
+  end
+  object Label5: TLabel
+    Left = 384
+    Top = 192
+    Width = 98
+    Height = 13
+    Caption = #1054#1087#1090#1080#1084#1072#1083#1100#1085#1099#1081' '#1087#1083#1072#1085
+  end
+  object Label6: TLabel
+    Left = 376
+    Top = 344
+    Width = 202
+    Height = 13
+    Caption = #1047#1085#1072#1095#1077#1085#1080#1077' '#1094#1077#1083#1077#1074#1086#1081' '#1092#1091#1085#1082#1094#1080#1080' '#1088#1072#1074#1085#1086'          '
+  end
+  object StringGrid1: TStringGrid
+    Left = 24
+    Top = 32
+    Width = 320
+    Height = 120
+    RowCount = 2
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+    TabOrder = 0
+  end
+  object StringGrid2: TStringGrid
+    Left = 32
+    Top = 168
+    Width = 320
+    Height = 129
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing]
+    TabOrder = 1
+  end
+  object StringGrid3: TStringGrid
+    Left = 32
+    Top = 312
+    Width = 185
+    Height = 121
+    TabOrder = 2
+  end
+  object StringGrid4: TStringGrid
+    Left = 376
+    Top = 32
+    Width = 145
+    Height = 120
+    ColCount = 2
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing]
+    TabOrder = 3
+  end
+  object StringGrid5: TStringGrid
+    Left = 376
+    Top = 208
+    Width = 161
+    Height = 120
+    TabOrder = 4
+  end
+  object MainMenu1: TMainMenu
+    Left = 776
+    Top = 16
+    object N1: TMenuItem
+      Caption = #1044#1072#1085#1085#1099#1077
+      object N2: TMenuItem
+        Caption = #1053#1086#1074#1099#1077
+      end
+      object N3: TMenuItem
+        Caption = #1047#1072#1075#1088#1091#1079#1082#1072' '#1080#1079' '#1041#1044
+        OnClick = N3Click
+      end
+      object N4: TMenuItem
+        Caption = #1047#1072#1087#1080#1089#1072#1090#1100' '#1074' '#1041#1044
+      end
+      object N18: TMenuItem
+        Caption = '-'
+      end
+      object N11: TMenuItem
+        Caption = #1047#1072#1082#1088#1099#1090#1100
+      end
+      object N17: TMenuItem
+        Caption = #1053#1072#1089#1090#1088#1086#1080#1090#1100' _'#1041#1044
+      end
+      object N5: TMenuItem
+        Caption = '-'
+      end
+      object N6: TMenuItem
+        Caption = #1042#1099#1093#1086#1076
+      end
+    end
+    object N7: TMenuItem
+      Caption = #1054#1073#1088#1072#1073#1086#1090#1082#1072
+      object N8: TMenuItem
+        Caption = #1055#1088#1086#1074#1077#1088#1082#1072
+      end
+      object N15: TMenuItem
+        Caption = #1056#1077#1096#1077#1085#1080#1077
+        OnClick = N15Click
+      end
+    end
+    object N9: TMenuItem
+      Caption = #1056#1077#1079#1091#1083#1100#1090#1072#1090#1099
+      object N10: TMenuItem
+        Caption = #1047#1072#1075#1088'_'#1080#1079'_'#1041#1044
+      end
+      object N16: TMenuItem
+        Caption = #1058#1077#1082#1091#1096'_'#1088#1077#1079#1091#1083#1100#1090#1072#1090
+      end
+    end
+  end
+  object IBTable1: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    FieldDefs = <
+      item
+        Name = 'KEYCOLJ'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'DEFP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TOPD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BOTD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'PROFITC'
+        DataType = ftFloat
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY5'
+        Fields = 'KEYCOLJ'
+        Options = [ixPrimary, ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'PEREMP'
+    Left = 736
+    Top = 16
+  end
+  object IBDatabase1: TIBDatabase
+    DatabaseName = 
+      'C:\Users\'#1042#1063'\Desktop\'#1060#1051#1069#1064'1\'#1076#1086#1082#1091#1084#1077#1085#1090#1099'\'#1051#1072#1073'_'#1059#1042#1086#1076#1050#1086#1084'\1 '#1089#1077#1084#1077#1089#1090#1088'\INT_DE' +
+      'L_TAR\THISISBASE2.gdb'
+    Params.Strings = (
+      'user_name=SYSDBA')
+    DefaultTransaction = IBTransaction1
+    IdleTimer = 0
+    SQLDialect = 3
+    TraceFlags = []
+    Left = 672
+    Top = 16
+  end
+  object IBTransaction1: TIBTransaction
+    Active = False
+    DefaultDatabase = IBDatabase1
+    AutoStopAction = saNone
+    Left = 704
+    Top = 16
+  end
+  object IBTable2: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY4'
+        Fields = 'KEYSTRI'
+        Options = [ixPrimary, ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'MATRIXA'
+    Left = 744
+    Top = 56
+  end
+  object IBTransaction2: TIBTransaction
+    Active = False
+    DefaultDatabase = IBDatabase1
+    AutoStopAction = saNone
+    Left = 712
+    Top = 56
+  end
+  object IBTable3: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    FieldDefs = <
+      item
+        Name = 'KEYSTRI'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'TOPB'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BOTB'
+        DataType = ftFloat
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY4'
+        Fields = 'KEYSTRI'
+        Options = [ixPrimary, ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'OGRAN'
+    Left = 744
+    Top = 104
+  end
+  object IBTransaction3: TIBTransaction
+    Active = False
+    DefaultDatabase = IBDatabase1
+    AutoStopAction = saNone
+    Left = 712
+    Top = 104
+  end
+end

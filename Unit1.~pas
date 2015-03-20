@@ -1,0 +1,209 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls, Grids, IBDatabase, DB, IBCustomDataSet, IBTable,
+  DBGrids;
+
+type
+  TForm1 = class(TForm)
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    N9: TMenuItem;
+    N10: TMenuItem;
+    N18: TMenuItem;
+    N11: TMenuItem;
+    N17: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    N15: TMenuItem;
+    N16: TMenuItem;
+    StringGrid1: TStringGrid;
+    Label1: TLabel;
+    IBTable1: TIBTable;
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    IBTable2: TIBTable;
+    IBTransaction2: TIBTransaction;
+    StringGrid2: TStringGrid;
+    Label2: TLabel;
+    IBTable3: TIBTable;
+    IBTransaction3: TIBTransaction;
+    StringGrid3: TStringGrid;
+    Label3: TLabel;
+    StringGrid4: TStringGrid;
+    Label4: TLabel;
+    Label5: TLabel;
+    StringGrid5: TStringGrid;
+    Label6: TLabel;
+    procedure N3Click(Sender: TObject);
+    procedure N15Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  //modified, DataUpdate: boolean;
+implementation
+
+{$R *.dfm}
+//Данные_Загрузить из БД
+procedure TForm1.N3Click(Sender: TObject);
+var i,j, row :integer;
+begin
+
+  Form1.IBTable1.Open;
+  Form1.IBTable1.FetchAll;
+  Form1.IBTable1.First;
+  Form1.StringGrid1.RowCount:= 2;
+  Form1.StringGrid1.ColCount:= Form1.IBTable1.RecordCount+1;
+  Form1.StringGrid1.Cells[0,1]:= 'Коэффициенты';
+   for i:=1 to Form1.IBTable1.RecordCount do
+   Form1.StringGrid1.Cells[i,0]:='P'+inttostr(i);
+   i:=1;
+  while not Form1.IBTable1.Eof do
+    begin
+    Form1.StringGrid1.Cells[i,1] := Form1.IBTable1.Fields[4].asString;
+    inc(i);
+    Form1.IBTable1.Next;
+  end;
+
+  Form1.IBTable3.Open;
+  Form1.IBTable3.FetchAll;
+  Form1.IBTable3.First;
+  Form1.StringGrid3.RowCount:= Form1.IBTable1.RecordCount+1;
+  Form1.StringGrid3.ColCount:= Form1.IBTable3.RecordCount-1;
+  Form1.StringGrid3.Cells[1,0]:= 'b';
+  //Form1.StringGrid3.Cells[2,0]:= 'lb';
+   for i:=1 to Form1.IBTable3.RecordCount do
+   Form1.StringGrid3.Cells[0,i]:='b'+inttostr(i);
+   i:=1;
+  while not Form1.IBTable3.Eof do
+    begin
+    Form1.StringGrid3.Cells[1,i] := Form1.IBTable3.Fields[1].asString;
+    //Form1.StringGrid3.Cells[2,i] := Form1.IBTable3.Fields[2].asString;
+    inc(i);
+    Form1.IBTable3.Next;
+  end;
+  Form1.IBTable3.Open;
+  Form1.IBTable3.FetchAll;
+  Form1.IBTable3.First;
+  Form1.StringGrid3.RowCount:= Form1.IBTable1.RecordCount+1;
+  Form1.StringGrid3.ColCount:= Form1.IBTable3.RecordCount-1;
+  Form1.StringGrid3.Cells[1,0]:= 'b';
+  //Form1.StringGrid3.Cells[2,0]:= 'lb';
+   for i:=1 to Form1.IBTable3.RecordCount do
+   Form1.StringGrid3.Cells[0,i]:='b'+inttostr(i);
+   i:=1;
+  while not Form1.IBTable3.Eof do
+    begin
+    Form1.StringGrid3.Cells[1,i] := Form1.IBTable3.Fields[1].asString;
+    //Form1.StringGrid3.Cells[2,i] := Form1.IBTable3.Fields[2].asString;
+    inc(i);
+    Form1.IBTable3.Next;
+  end;
+
+  Form1.IBTable3.Open;
+  Form1.IBTable3.FetchAll;
+  Form1.IBTable3.First;
+  Form1.StringGrid4.RowCount:= Form1.IBTable1.RecordCount+1;
+  Form1.StringGrid4.ColCount:= Form1.IBTable3.RecordCount-1;
+  Form1.StringGrid4.Cells[1,0]:= 'lb';
+  //Form1.StringGrid4.Cells[2,0]:= 'lb';
+   for i:=1 to Form1.IBTable3.RecordCount do
+   Form1.StringGrid4.Cells[0,i]:='b'+inttostr(i);
+   i:=1;
+  while not Form1.IBTable3.Eof do
+    begin
+    //Form1.StringGrid4.Cells[1,i] := Form1.IBTable3.Fields[1].asString;
+    Form1.StringGrid4.Cells[2,i] := Form1.IBTable3.Fields[2].asString;
+    inc(i);
+    Form1.IBTable3.Next;
+  end;
+  Form1.IBTable3.Open;
+  Form1.IBTable3.FetchAll;
+  Form1.IBTable3.First;
+  Form1.StringGrid4.RowCount:= Form1.IBTable1.RecordCount+1;
+  Form1.StringGrid4.ColCount:= Form1.IBTable3.RecordCount-1;
+  //Form1.StringGrid4.Cells[1,0]:= 'b';
+  Form1.StringGrid4.Cells[2,0]:= 'lb';
+   for i:=1 to Form1.IBTable3.RecordCount do
+   Form1.StringGrid4.Cells[0,i]:='b'+inttostr(i);
+   i:=1;
+  while not Form1.IBTable3.Eof do
+    begin
+    Form1.StringGrid4.Cells[1,i] := Form1.IBTable3.Fields[2].asString;
+    //Form1.StringGrid4.Cells[2,i] := Form1.IBTable3.Fields[2].asString;
+    inc(i);
+    Form1.IBTable3.Next;
+  end;
+
+
+
+  Form1.IBTable2.Open;
+  Form1.IBTable2.FetchAll;
+  Form1.StringGrid2.RowCount:= Form1.IBTable3.RecordCount+1;
+  Form1.StringGrid2.ColCount:=Form1.IBTable1.
+  RecordCount+1;
+  for i:=1 to Form1.IBTable3.RecordCount do
+    Form1.StringGrid2.Cells[0,i] := 'b'+ inttostr(i);
+    for j:=1 to Form1.IBTable1.RecordCount do
+   Form1.StringGrid2.Cells[j,0]:='P'+inttostr(j);
+   row:=1;
+  i:=1;
+  Form1.IBTable2.First;
+  while not Form1.IBTable2.Eof do
+  begin
+    if (i<=Form1.StringGrid1.ColCount-1) then
+    begin
+      Form1.StringGrid2.Cells[i,row]:= Form1.IBTable2.Fields[2].AsString;
+      inc(i);
+    end
+    else
+    begin
+      i:=1;
+      inc(row);
+      Form1.StringGrid2.Cells[i,row]:= Form1.IBTable2.Fields[2].AsString;
+      inc(i);
+    end;
+    Form1.IBTable2.Next;
+  end;
+
+   end;
+
+   //Вывод, план
+   procedure TForm1.N15Click(Sender: TObject);
+var i :integer;
+i1,i2,i3,i4: integer;
+begin
+  Form1.IBTable1.Open;
+  Form1.IBTable1.FetchAll;
+  Form1.StringGrid5.RowCount:= Form1.IBTable1.RecordCount+1;
+  Form1.StringGrid5.ColCount:= 2 ;
+  i1:=10;
+  i2:=0;
+  i3:=6;
+  i4:=0;
+  //Form1.StringGrid5.Cells[0,1]:= 'Коэффициенты';
+   for i:=1 to Form1.IBTable1.RecordCount do
+   Form1.StringGrid5.Cells[0,i]:='P'+inttostr(i);
+   Form1.StringGrid5.Cells[1,1]:= inttostr(i1);
+   Form1.StringGrid5.Cells[1,2]:= inttostr(i2);
+   Form1.StringGrid5.Cells[1,3]:= inttostr(i3);
+   Form1.StringGrid5.Cells[1,4]:= inttostr(i4);
+   Form1.StringGrid5.Cells[1,0]:= 'P';
+
+
+end;
+
+end.
